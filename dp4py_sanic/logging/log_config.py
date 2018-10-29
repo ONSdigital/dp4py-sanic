@@ -7,7 +7,7 @@ import logging
 from dp4py_sanic.config import CONFIG
 from dp4py_sanic.logging.formatter import SanicJsonFormatter
 
-from dp4py_logging.log.config import config_for_formatter
+from dp4py_logging.config import config_for_formatter
 
 # Set supported log keys
 supported_keys = [

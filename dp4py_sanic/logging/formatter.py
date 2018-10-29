@@ -2,7 +2,7 @@
 Add namespace to all log messages
 """
 from dp4py_sanic.config import CONFIG
-from dp4py_logging.log.formatters import CustomJsonFormatter
+from dp4py_logging.formatters import CustomJsonFormatter
 
 
 class SanicJsonFormatter(CustomJsonFormatter):
