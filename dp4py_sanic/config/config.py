@@ -13,6 +13,7 @@ CONFIG = Section("dp4py_sanic config")
 CONFIG.APP = Section()
 CONFIG.APP.title = 'dp4py-sanic'
 CONFIG.APP.description = 'Sanic app wrapper for digital publishing that implements JSON logging'
+CONFIG.APP.prometheus_metrics_enabled = bool_env("PROMETHEUS_METRICS_ENABLED", False)
 
 CONFIG.LOGGING = Section("Logging config")
 CONFIG.LOGGING.namespace = os.environ.get("LOGGING_NAMESPACE", CONFIG.APP.title)

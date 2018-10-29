@@ -1,8 +1,12 @@
 """
 Defines a Sanic server class which uses the dp4py_logging library for JSON logging
 """
-from sanic import Sanic
+import logging
 
+from sanic import Sanic
+from sanic_prometheus import monitor
+
+from dp4py_sanic.config import CONFIG
 from dp4py_sanic.logging.log_config import log_config
 
 
@@ -15,3 +19,8 @@ class Server(Sanic):
                                      load_env=load_env, request_class=request_class,
                                      strict_slashes=strict_slashes, log_config=log_config,
                                      configure_logging=configure_logging)
+
+        # Enable prometheus metrics?
+        if CONFIG.APP.prometheus_metrics_enabled:
+            logging.info("Prometheus metrics enabled: Enabling /metrics endpoint.")
+            monitor(self).expose_endpoint()
