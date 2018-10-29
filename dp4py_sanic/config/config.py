@@ -8,9 +8,9 @@ from dp4py_config.section import Section
 from dp4py_config.utils import bool_env
 
 
-CONFIG = Section("Global config")
+CONFIG = Section("dp4py_sanic config")
 
-CONFIG.APP = Section("APP config")
+CONFIG.APP = Section()
 CONFIG.APP.title = 'dp4py-sanic'
 CONFIG.APP.description = 'Sanic app wrapper for digital publishing that implements JSON logging'
 
