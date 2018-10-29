@@ -53,7 +53,7 @@ def get_log_level(default: str="INFO"):
     Returns the configured log level, and logs error if invalid
     :return:
     """
-    level = os.environ.get("SEARCH_LOG_LEVEL", default)
+    level = os.environ.get("LOG_LEVEL", default)
     if isinstance(level, str):
         level = level.upper()
 
