@@ -2,8 +2,8 @@
 Contains server config
 """
 import logging
-from dp4py_config.config.section import Section
-from dp4py_config.config.utils import bool_env
+from dp4py_config.section import Section
+from dp4py_config.utils import bool_env
 
 
 CONFIG = Section("Global config")
