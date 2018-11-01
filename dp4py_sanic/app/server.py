@@ -8,7 +8,6 @@ from sanic_prometheus import monitor
 
 from dp4py_sanic.config import CONFIG
 from dp4py_sanic.app.request import Request
-from dp4py_sanic.app.exceptions.error_handlers import ErrorHandlers
 from dp4py_sanic.logging.log_config import log_config as sanic_log_config
 
 
