@@ -22,9 +22,6 @@ class Server(Sanic):
                                      strict_slashes=strict_slashes, log_config=log_config,
                                      configure_logging=configure_logging)
 
-        # Register error handler
-        ErrorHandlers.register(self)
-
         # Enable prometheus metrics?
         if CONFIG.APP.prometheus_metrics_enabled:
             logging.info("Prometheus metrics enabled: Enabling /metrics endpoint.")
