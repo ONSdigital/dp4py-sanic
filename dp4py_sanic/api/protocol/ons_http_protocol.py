@@ -5,7 +5,7 @@ from sanic.log import access_logger
 from sanic.server import HttpProtocol
 from sanic.response import HTTPResponse
 
-from dp4py_sanic.app.request import Request
+from dp4py_sanic.api.request import Request
 
 
 class ONSHttpProtocol(HttpProtocol):

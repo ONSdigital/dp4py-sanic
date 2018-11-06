@@ -3,7 +3,7 @@ Defines a wrapper fn for a json response which sets the X-Request-Id header
 """
 from sanic.response import HTTPResponse, json_dumps
 
-from dp4py_sanic.app.request import Request
+from dp4py_sanic.api.request import Request
 
 
 def json(request: Request, body, status=200, headers: dict=None, dumps=json_dumps, **kwargs):

@@ -7,7 +7,7 @@ import sanic.exceptions
 from sanic.response import json
 
 from dp4py_sanic.app.server import Server
-from dp4py_sanic.app.request import Request
+from dp4py_sanic.api.request import Request
 
 
 class ErrorHandlers(object):
