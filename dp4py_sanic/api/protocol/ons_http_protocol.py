@@ -5,7 +5,7 @@ from sanic.log import access_logger
 from sanic.server import HttpProtocol
 from sanic.response import HTTPResponse
 
-from dp_conceptual_search.api.request.ons_request import ONSRequest
+from dp4py_sanic.app.request import Request
 
 
 class ONSHttpProtocol(HttpProtocol):
@@ -22,7 +22,7 @@ class ONSHttpProtocol(HttpProtocol):
 
             extra['host'] = 'UNKNOWN'
             if self.request is not None:
-                if isinstance(self.request, ONSRequest):
+                if isinstance(self.request, Request):
                     # Add request ID to logs
                     extra["context"] = self.request.request_id
                 if self.request.ip:
