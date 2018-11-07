@@ -31,7 +31,9 @@ class ONSHttpProtocol(HttpProtocol):
 
                 extra['method'] = self.request.method
                 extra['path'] = self.request.path
-                extra['query'] = self.request.query_string
+
+                if self.request.query_string is not None and len(self.request.query_string) > 0:
+                    extra['query'] = self.request.query_string
             else:
                 extra['request'] = 'nil'
 
