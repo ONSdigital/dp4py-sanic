@@ -7,10 +7,11 @@ import logging
 from dp4py_sanic.config import CONFIG
 from dp4py_sanic.logging.formatter import SanicJsonFormatter
 
-from dp4py_logging.loggers import DPLogger
+from dp4py_logging.loggers import DPLogger, TRACE
 from dp4py_logging.config import config_for_formatter
 
 # Set logger class
+logging.addLevelName(TRACE, "TRACE")
 logging.setLoggerClass(DPLogger)
 
 # Set supported log keys
