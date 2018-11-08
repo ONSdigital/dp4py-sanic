@@ -7,6 +7,7 @@ from sanic import Sanic
 from sanic_prometheus import monitor
 
 from dp4py_sanic.config import CONFIG
+from dp4py_sanic.config import sanic_config
 from dp4py_sanic.api.request import Request
 from dp4py_sanic.logging.log_config import log_config as sanic_log_config
 
@@ -20,6 +21,8 @@ class Server(Sanic):
                                      load_env=load_env, request_class=request_class,
                                      strict_slashes=strict_slashes, log_config=log_config,
                                      configure_logging=configure_logging)
+
+        self.config.from_object(sanic_config)
 
         # Set logging namespace
         CONFIG.LOGGING.namespace = log_namespace
