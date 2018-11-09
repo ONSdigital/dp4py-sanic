@@ -12,13 +12,18 @@ from dp4py_sanic.api.request import Request
 
 class TestApp(unittest.TestCase, abc.ABC):
 
+    def setUp(self):
+        super(TestApp, self).setUp()
+
+        self.app = self.get_app()
+
     @abc.abstractmethod
-    def get_client(self) -> Server:
+    def get_app(self) -> Server:
         pass
 
     @property
     def test_client(self):
-        return self.get_client().test_client
+        return self.app.test_client
 
     @staticmethod
     def url_encode(params: dict):
